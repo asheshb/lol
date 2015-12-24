@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LOL</string>
+    <string name="action_settings">Settings</string>
+    <string name="jokeButton">Get A Joke</string>
+    <string name="exception_no_internet">Couldn\'t connect to server. Please check if internet is available.</string>
+
+</resources>
