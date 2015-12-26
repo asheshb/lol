@@ -32,9 +32,9 @@ public class MyEspressoTest extends ActivityInstrumentationTestCase2<MainActivit
     @Test
     public void testJokeFetchTask(){
 
-
+        mActivity.setConnectedTestingAsync(true);
         onView(withId(R.id.jokeButton)).perform(click());
-        //assertNotNull(mActivity.mResult);
+        assertNotNull(mActivity.mResult);
 
     }
 }

@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity  implements AsyncTaskComplet
     private EndpointsAsyncTask mEndpointsAsyncTask;
     private MainActivityFragment mFragment;
     private ProgressBar mProgressBar;
+    //For connected testing
+    private boolean mConnectedTestingAsync = false;
+    public String mResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,13 @@ public class MainActivity extends AppCompatActivity  implements AsyncTaskComplet
 
     }
 
+    public void setConnectedTestingAsync(boolean connectedTesting){
+        this.mConnectedTestingAsync = connectedTesting;
+    }
+
+    public boolean getConnectedTestingAsync(){
+        return this.mConnectedTestingAsync;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -84,8 +94,12 @@ public class MainActivity extends AppCompatActivity  implements AsyncTaskComplet
     {
         mProgressBar.setVisibility(ProgressBar.INVISIBLE);
         if(result != null) {
-            mFragment.setJokeData(result);
-            mFragment.displayJoke();
+            if(!mConnectedTestingAsync) {
+                mFragment.setJokeData(result);
+                mFragment.displayJoke();
+            } else{
+                mResult = result;
+            }
             Log.d(LOG_TAG, "SHOWING JOKE");
             //Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
 

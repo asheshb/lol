@@ -50,7 +50,7 @@ class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 
         try {
             //For debugging
-            //Thread.sleep(2000);
+            Thread.sleep(2000);
             return myApiService.getJoke().execute().getData();
         } catch (Exception e) {
             mException = e;
