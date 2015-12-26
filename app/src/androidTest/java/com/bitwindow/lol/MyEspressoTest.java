@@ -34,7 +34,7 @@ public class MyEspressoTest extends ActivityInstrumentationTestCase2<MainActivit
 
 
         onView(withId(R.id.jokeButton)).perform(click());
-        //assertNotNull(mActivity.mF);
+        //assertNotNull(mActivity.mResult);
 
     }
 }

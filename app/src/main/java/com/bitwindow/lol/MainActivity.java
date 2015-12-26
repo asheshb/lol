@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity  implements AsyncTaskComplet
     private EndpointsAsyncTask mEndpointsAsyncTask;
     private MainActivityFragment mFragment;
     private ProgressBar mProgressBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

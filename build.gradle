@@ -21,3 +21,28 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+//Dummy tasks to avoid circular dependency
+
+
+task stopAppEngineWrapper(dependsOn: ':api:appengineStop'){
+    doFirst{
+        println 'stopAppEngineWrapper called'
+    }
+
+}
+
+
+task runConnectedTest (dependsOn: [':stopAppEngineWrapper', ':api:appengineStop', ':api:appengineRun',':app:connectedCheck']) {
+    project(":api").afterEvaluate { api ->
+        api.extensions.appengine.daemon = true
+    }
+    tasks.getByPath(':api:appengineRun').mustRunAfter tasks.getByPath(':api:appengineStop')
+    tasks.getByPath(':app:connectedCheck').dependsOn ':api:appengineRun'
+    tasks.getByPath(':stopAppEngineWrapper').mustRunAfter tasks.getByPath(':app:connectedCheck')
+}
+
+
+
+
