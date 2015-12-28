@@ -37,7 +37,7 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile project(path: ':api', configuration: 'android-endpoints')
     compile project (':jokedisplay')
-    freeCompile 'com.google.android.gms:play-services-ads:8.3.0'
+    freeCompile 'com.google.android.gms:play-services-ads:8.4.0'
 
     androidTestCompile 'com.android.support.test:runner:0.4'
     // Set this dependency to use JUnit 4 rules

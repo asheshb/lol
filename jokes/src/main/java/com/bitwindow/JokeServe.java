@@ -5,7 +5,7 @@ import java.util.Random;
 public class JokeServe {
 
     //credit: https://blog.samanage.com/friday-fun/10-jokes-that-only-help-desk-pros-would-understand/
-    private static String[] jokeItems = {
+    private final static String[] jokeItems = {
 
             "Q: Why do programmers always mix up Halloween and Christmas? A: Because Oct 31 = Dec 25. (Do the math. It's true!)",
             "\"Knock, knock.\"\n\n\"Who's there?\"\nExtremely long pause... \"Java.\"",
